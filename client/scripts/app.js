@@ -14,8 +14,6 @@ function initMap() {
     });
 }
 
-
-
 function getData(){
     $.ajax({
         type: "GET",
