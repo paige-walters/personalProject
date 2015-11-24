@@ -1,0 +1,477 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -93.654284,
+                    45.239243
+                ]
+            },
+            "properties": {
+                "name": "BP",
+                "address": "11438 County Road 37 Northeast, Albertville, Minnesota 55301"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -93.286342,
+                    44.769436
+                ]
+            },
+            "properties": {
+                "name": "BP",
+                "address": "501 West Burnsville Parkway, Burnsville, Minnesota 55337"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -93.277918,
+                    44.753542
+                    
+                ]
+            },
+            "properties": {
+                "name": "BP",
+                "address": "14220 Nicollet Avenue, Burnsville, Minnesota, 55337"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -93.27829,
+                    44.775572
+                ]
+            },
+            "properties": {
+                "name": "Shell",
+                "address": "12340 Nicollet Ave, Burnsville, Minnesota, 55337"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -92.932922,
+                    44.818042
+                ]
+            },
+            "properties": {
+                "name": "BP",
+                "address": "8490 East Point Douglas Road, Cottage Grove, Minnesota, 55016"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -93.427789,
+                    44.856599
+                ]
+            },
+            "properties": {
+                "name": "Bobby & Steves",
+                "address": "8100 Flying Cloud Dr, Eden Prairie, Minnesota, 55344"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -93.458712,
+                    44.864181
+                    
+                ]
+            },
+            "properties": {
+                "name": "BP",
+                "address": "7675 Mitchell Road, Eden Prairie, Minnesota, 55344"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -93.456296,
+                    44.869084
+                    
+                ]
+            },
+            "properties": {
+                "name": "BP",
+                "address":"7400 Mitchell Road, Eden Prairie, Minnesota, 55344"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -93.43844,
+                    44.84354
+                    
+                ]
+            },
+            "properties": {
+                "name": "BP",
+                "address":"8820 Aztec Drive, Eden Prairie, Minnesota, 55347"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -93.356253,
+                    44.908565
+                    
+                ]
+            },
+            "properties": {
+                "name": "BP",
+               "address":"5209 Vernon Avenue South, Edina, Minnesota, 55436"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -93.329406,
+                    44.87608
+                    
+                ]
+            },
+            "properties": {
+                "name": "BP",
+                  "address":"3901 West 70th Street, Minneapolis, Minnesota, 55435"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -93.56424,
+                    44.902867
+                    
+                ]
+            },
+            "properties": {
+                "name": "BP",
+               "address":"481 2nd Street, Excelsior, Minnesota, 55331"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -92.98402,
+                    45.274297
+                    
+                ]
+            },
+            "properties": {
+                "name": "Lakeside Gas & Groceries",
+                "address":"408 Lake Street South, Forest Lake, Minnesota, 55025"
+                
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -93.237768,
+                    45.492556
+                    
+                ]
+            },
+            "properties": {
+                "name": "BP",
+                "address":"412 County Road 5, Isanti, Minnesota, 55040"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -93.216994,
+                     44.707887
+                ]
+            },
+            "properties": {
+                "name": "Shell",
+                "address":"7468 167th Street West, Lakeville, Minnesota, 55068"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -92.984689,
+                    45.042832
+                    
+                ]
+            },
+            "properties": {
+                "name": "BP",
+                "address":"122 Century Avenue North, Saint Paul, Minnesota, 55110"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -93.449946,
+                    45.067811
+                ]
+            },
+            "properties": {
+                "name": "BP",
+                 "address":"13379 Bass Lake Road, Maple Grove, Minnesota, 55311"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -94.007635,
+                    45.23179
+                ]
+            },
+            "properties": {
+                "name": "BP",
+                "address":"300 Highway 55, Maple Lake, Minnesota, 55358"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -93.2635159,
+                    45.0164081
+                    
+                ]
+            },
+            "properties": {
+                "name": "BP",
+                "address":"2636 University Avenue Northeast, Minneapolis, Minnesota, 55418"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -93.263516,
+                    45.016408
+                    
+                ]
+            },
+            "properties": {
+                "name": "BP",
+                "address":"1201 Silver Lake Road Northwest, New Brighton, 55112"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -93.308156,
+                    44.883275
+                    
+                ]
+            },
+            "properties": {
+                "name": "BP",
+                "address":"6601 Penn Avenue South, Minneapolis, Minnesota, 55423"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -92.351132,
+                    43.943913
+                ]
+            },
+            "properties": {
+                "name": "Jeff's Little Store",
+                "address": "5395 U.S. 52, Rochester, Minnesota, 55904"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -92.461705,
+                    43.989388
+                    
+                ]
+            },
+            "properties": {
+                "name": "BP All Tune Lube",
+                "address": "2276 South Broadway, Rochester, Minnesota, 55904"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -93.187344,
+                    45.035631
+                    
+                ]
+            },
+            "properties": {
+                "name": "BP",
+                "address": "3110 Cleveland Avenue North, Roseville, Minnesota, 55113"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -93.335967,
+                    44.778628
+                    
+                ]
+            },
+            "properties": {
+                "name": "BP",
+                "address": "4445 Highway 13, Savage, Minnesota, 55378"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -93.11838,
+                    45.079499
+                    
+                ]
+            },
+            "properties": {
+                "name": "BP",
+                "address":"415 County Highway 96, Shoreview, Minnesota, 55126"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -93.094852,
+                    44.952025
+                    
+                ]
+            },
+            "properties": {
+                "name": "BP",
+                "address": "542 Robert Street North, Saint Paul, Minnesota, 55101"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -91.685401,
+                    47.025549
+                    
+                ]
+            },
+            "properties": {
+                "name": "Krist Foodmart",
+                "address": "1321 7th Avenue, Two Harbors, Minnesota, 55616"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -92.034662,
+                    44.377531
+                    
+                ]
+            },
+            "properties": {
+                "name": "BP",
+                "address":"825 Pembroke Avenue, Wabasha, Minnesota, 55981"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -93.789114,
+                    44.842941
+                    
+                ]
+            },
+            "properties": {
+                "name": "BP (Colony plaza)",
+                "address":"140 MN-5, Waconia, 55387"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -93.080194,
+                    44.891213
+                    
+                ]
+            },
+            "properties": {
+                "name": "BP",
+                "address":"1820 South Robert Street, Saint Paul, Minnesota, 55118"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -93.001378z
+                    45.335689,
+                    
+                ]
+            },
+            "properties": {
+                "name": "BP",
+                "address": "26694 Fallbrook Avenue, Wyoming, Minnesota, 55092"
+            }
+        }
+    ]
+}

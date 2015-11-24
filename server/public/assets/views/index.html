@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0">
+    <title>OppTane93 Home</title>
+
+    <!--STYLES-->
+    <link rel="stylesheet" href="/vendors/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/styles/style.css">
+
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjKftNYJ0eNv481vCuaz8XcDpVe_ovqEM&callback=initMap">
+    </script>
+
+    <!--SCRIPTS-->
+    <script type="text/javascript" src="vendors/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/scripts/app.min.js"></script>
+
+    <!--GOOGLE-->
+
+
+
+
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar well">
+            <!--<img class="thumbnail" src="assets/styles/opptanelogo.png">-->
+            <div class="logo" id="logo"></div>
+            <button class="btn btn-danger" id="currentLocation">Current Location</button>
+
+
+            <form id="search">
+                <input type="text" id="locationSearch" name="locationSearch" placeholder="City, State, or Zip"><br>
+                <button id="submitSearch" class="btn btn-danger">Search</button>
+            </form>
+
+
+            <p>Opptane 93 is an app designed to make it easier to<br>
+                find gas stations that provide 93 or higher octane gas</p>
+
+            <a href="/addAStation.html">Add a station!</a>
+
+            <div class="footer" id="contactInfo">
+
+            <p id="contact">Contact us at the links below</p>
+                <img src="https://osiprodeusodcspstoa01.blob.core.windows.net/en-us/media/dc36f8aa-3677-4a31-aea2-04f8525a8131.png" >
+            </div>
+        </div>
+    <div class="well" id="map">
+    </div>
+    </div>
+
+
+</body>
+</html>

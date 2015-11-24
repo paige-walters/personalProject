@@ -1,0 +1,26 @@
+#currentLocation {
+    margin: 10px;
+}
+#submitSearch {
+    margin: 10px;
+}
+#map {
+    width:731px;
+    height:520px;
+    float: right;
+}
+.sidebar {
+    float: left;
+}
+
+.logo {
+    height: 125px;
+    width: 259px;
+    background-image: url("drawing.jp.jpg");
+    margin: 10px;
+}
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
