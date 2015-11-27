@@ -1,0 +1,72 @@
+<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<script type="text/javascript" src="../../vendors/jquery.min.js"></script>
+<!--<script type="text/javascript" src="../scripts/app.min.js"></script>-->
+
+<link type="text/css" rel="stylesheet" href="../../vendors/materialize.min.css"  media="screen,projection"/>
+
+<script type="text/javascript" src="../../vendors/materialize.min.js"></script>
+
+<!--<div class="container">-->
+
+<nav>
+    <div class="nav-wrapper #b71c1c red darken-4">
+        <h1 class="brand-logo center">Add A Station</h1>
+        <ul id="nav-mobile" class="left">
+            <li><a href="/" class="btn-floating btn-large waves-effect waves-dark red">Back</a><i class="material-icons">fast_rewind</i></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="row">
+<div class="right col s4">
+<div  id="addlogo">
+    <img src="../styles/drawing.jp.jpg">
+        <p class="flow-text">This area is for you to add in a gas station that provides
+            93 level octane or higher that you've noticed is currently excluded from our list.
+            Your request will go straight to an admin for approval. Once approved, you'll be able to see your
+            favorite place to fill your baby up on the map!</p>
+</div>
+</div>
+
+
+<div id="addForm" class="row col s8">
+    <form>
+        <div class="row">
+            <div class="input-field col s5">
+                <input placeholder="ex: BP, Shell, Happy Ben's" id="station_name" type="text" class="validate">
+                <label for="station_name">Station Name</label>
+            </div>
+        </div>
+            <div class="row">
+            <div class="input-field col s8">
+                <input placeholder="Street" id="street" type="text" class="validate">
+                <label for="street">Address</label>
+                <div class="input-field col s4">
+                <input placeholder="City" id="city" type="text" class="validate">
+                </div>
+                <div class="input-field col s4">
+                    <input placeholder="State" id="state" type="text" class="validate">
+                </div>
+                <div class="input-field col s4">
+                    <input placeholder="Zip" id="zip" type="text" class="validate">
+                </div>
+            </div>
+            </div>
+
+        <div class="row">
+            <div class="input-field col s6">
+                <i class="material-icons prefix">phone</i>
+                <input placeholder="555-555-5555" id="station_number" type="text" class="validate">
+                <label for="station_number">Station Number</label>
+            </div>
+        </div>
+        <div class="row center-align">
+        <button class="center btn waves-effect waves-light #b71c1c red darken-4" type="submit" name="action">Submit
+            <i class="material-icons right">send</i>
+        </button>
+        </div>
+    </form>
+</div>
+</div>
+<!--</div>-->
