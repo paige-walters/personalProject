@@ -22,6 +22,12 @@ app.get('/data', function(req,res){
         })
     });
 
+
+app.post('/data', function(req,res){
+    console.log(req);
+    console.log(res);
+});
+
 app.get('/*', function(req, res){
     var file = req.params[0] || "assets/views/index.html";
     res.sendFile(path.join(__dirname, "./public/", file));

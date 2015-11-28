@@ -5,18 +5,15 @@
     margin: 10px;
 }
 #map {
-    width:731px;
-    height:520px;
-    float: right;
+    width: 650px;
+    height: 600px;
+    /*float: right;*/
 }
 .sidebar {
     float: left;
 }
 
 .logo {
-    height: 125px;
-    width: 259px;
-    background-image: url("drawing.jp.jpg");
     margin: 10px;
 }
 body {

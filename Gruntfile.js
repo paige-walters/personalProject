@@ -9,12 +9,21 @@ module.exports = function(grunt){
                 banner: '/*! <%= grunt.template.today("yyyy-mm-dd") %> */\n'
             },
             app: {
-                src: 'client/scripts/*.js',
+                src: 'client/scripts/app.js',
                 dest: 'server/public/assets/scripts/app.min.js'
             }
         },
 
         copy: {
+            app: {
+                src: 'client/scripts/adminapp.js',
+                dest: 'server/public/assets/scripts/'
+            },
+            app2: {
+                src: 'client/scripts/addAstation.js',
+                dest: 'server/public/assets/scripts/'
+            },
+
             bootstrap: {
                 expand: true,
                 cwd: 'node_modules/bootstrap/dist/css',
