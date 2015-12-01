@@ -10,6 +10,7 @@ var Schema = mongoose.Schema;
 
 
 mongoose.connect('mongodb://localhost/opptane_stations');
+
 mongoose.model('Station', new Schema({ "name": String, "address": String}, {collection: 'stations'}));
 var Station = mongoose.model('Station');
 
@@ -17,9 +18,11 @@ mongoose.model('Stationadded', new Schema({ "name": String, "street": String, "c
 var Stationadded = mongoose.model('Stationadded');
 
 app.set('port', process.env.PORT || 5000);
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({expanded: true}));
 
+//get call for the stations collection in the db
 
 app.get('/data', function(req,res){
         Station.find({"type": "FeatureCollection"}, function(err, data){
@@ -28,6 +31,17 @@ app.get('/data', function(req,res){
             res.json(data);
         })
     });
+
+//get call to the client_added_stations for any new stations a client has submitted
+//used to populate the table in the admin view
+
+app.get('/admin', function(req,res){
+    Stationadded.find({}, function(err, data){
+        if (err) console.log(err);
+        console.log(data);
+        res.json(data);
+    })
+});
 
 
 app.post('/data', function(req,res){
@@ -48,10 +62,19 @@ app.post('/data', function(req,res){
 });
 
 
-//app.post('/data', function(req,res){
-//    console.log(req);
-//    console.log(res);
-//});
+app.delete('/delete', function(req,res){
+    console.log('The delete call made it to the server');
+    console.log(req.body.id);
+
+    Stationadded.findByIdAndRemove({"_id" : req.body.id}, function(err, data){
+        if(err) console.log(err);
+        res.send(data);
+    });
+
+
+});
+
+
 
 app.get('/*', function(req, res){
     var file = req.params[0] || "assets/views/index.html";
