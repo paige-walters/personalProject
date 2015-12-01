@@ -1,24 +1,70 @@
+var globaldata = [];
+var map;
+
 $(document).ready(function(){
-    initMap();
     console.log("Up and running!");
+
+    initMap();
     getData();
     geolocationBtn();
 
 
 });
 
-//var mapPositions;
+function getData(){
+    $.ajax({
+        type: "GET",
+        url: "/data",
+        success: function(data){
+            globaldata = data[0];
+            console.log("I got the data", globaldata);
 
-var stationsOnMap;
+            addDataToMap(globaldata);
+            dropDownList(globaldata);
 
+        }
+    })
 
-var map;
+}
+
 
 function initMap() {
 
     map = new google.maps.Map(document.getElementById('map'), {
         center: {lat: 44.87608, lng: -93.329406},
-        zoom: 10
+        zoom: 9
+    });
+
+}
+
+
+function dropDownList(stationsOnMap){
+
+
+    for(var i = 0; i < stationsOnMap.features.length; i++){
+        $('#dropdownlist').append("<option>" + i + " - " + stationsOnMap.features[i].properties.name + "</option>");
+
+    }
+
+
+
+    $('select').material_select();
+
+}
+function addDataToMap(data) {
+    map.data.addGeoJson(data);
+
+    // global infowindow
+    var infowindow = new google.maps.InfoWindow();
+
+    // When the user clicks, open an infowindow
+    map.data.addListener('click', function(event) {
+        var myHTML = event.feature.getProperty("name");
+        var myHTML2 = event.feature.getProperty("address");
+        infowindow.setContent("<div style='width:150px; text-align: center;'>"+myHTML+ " <br>"+myHTML2+"</div>");
+        infowindow.setPosition(event.feature.getGeometry().get());
+        infowindow.setOptions({pixelOffset: new google.maps.Size(0,-30)});
+        infowindow.open(map);
     });
 
 
@@ -60,51 +106,7 @@ function geolocationBtn() {
 }
 
 
-function dropDownList(stationsOnMap){
 
 
-    for(var i = 0; i < stationsOnMap[0].features.length; i++){
-        //console.log(stationsOnMap[0].features[i].properties.name);
-        $('#dropdownlist').append("<option>" + i + " - " + stationsOnMap[0].features[i].properties.name + "</option>");
-
-    }
-    $('select').material_select();
-
-}
-
-
-function getData(){
-    $.ajax({
-        type: "GET",
-        url: "/data",
-        //data: data,
-        success: function(data){
-            stationsOnMap = data;
-            dropDownList(stationsOnMap);
-        }
-    })
-
-}
-//
-//function mapMarkers (stationsOnMap) {
-//
-//
-//
-//    for (var i = 0; i < stationsOnMap[0].features.length; i++) {
-//        //console.log(stationsOnMap[0].features[i].geometry.coordinates);
-//
-//        for (var p = 0; p < stationsOnMap[0].features[i].geometry.coordinates.length; p++) {
-//            var temp = (stationsOnMap[0].features[i].geometry.coordinates[0]);
-//            var temp2 = (stationsOnMap[0].features[i].geometry.coordinates[1]);
-//        }
-//            var tempObj = {lat: temp, lng: temp2};
-//            mapPositions = tempObj;
-//            console.log(mapPositions);
-//
-//
-//    }
-//
-//
-//}
 
 

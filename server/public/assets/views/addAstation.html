@@ -36,22 +36,22 @@
     <form id="addStationForm">
         <div class="row">
             <div class="input-field col s5">
-                <input placeholder="ex: BP, Shell, Happy Ben's" id="station_name" type="text" class="validate">
+                <input placeholder="ex: BP, Shell, Happy Ben's" id="station_name" type="text" name="station_name" class="validate">
                 <label for="station_name">Station Name</label>
             </div>
         </div>
             <div class="row">
             <div class="input-field col s8">
-                <input placeholder="Street" id="street" type="text" class="validate">
+                <input placeholder="Street" id="street" type="text" name="station_street" class="validate">
                 <label for="street">Address</label>
                 <div class="input-field col s4">
-                <input placeholder="City" id="city" type="text" class="validate">
+                <input placeholder="City" id="city" type="text" name="station_city" class="validate">
                 </div>
                 <div class="input-field col s4">
-                    <input placeholder="State" id="state" type="text" class="validate">
+                    <input placeholder="State" id="state" type="text" name="station_state" class="validate">
                 </div>
                 <div class="input-field col s4">
-                    <input placeholder="Zip" id="zip" type="text" class="validate">
+                    <input placeholder="Zip" id="zip" type="text" name="station_zip" class="validate">
                 </div>
             </div>
             </div>
@@ -59,12 +59,12 @@
         <div class="row">
             <div class="input-field col s6">
                 <i class="material-icons prefix">phone</i>
-                <input placeholder="555-555-5555" id="station_number" type="text" class="validate">
+                <input placeholder="555-555-5555" id="station_number" type="text" name="station_number" class="validate">
                 <label for="station_number">Station Number</label>
             </div>
         </div>
         <div class="row center-align">
-        <button class="center btn waves-effect waves-light #b71c1c red darken-4" id="addA" type="submit" name="action">Submit
+        <button class="center btn waves-effect waves-light #b71c1c red darken-4" id="addA" type="submit" name="submit">Submit
             <i class="material-icons right">send</i>
         </button>
         </div>
