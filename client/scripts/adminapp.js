@@ -1,8 +1,13 @@
 $(document).ready(function() {
     getData();
     $('#searchAdmin').submit(searchKeyword);
+    initialize();
 });
-
+var geocoder;
+var newFeature;
+function initialize() {
+    geocoder = new google.maps.Geocoder();
+}
 
 function searchKeyword() {
     console.log("why the fuck can't I do this?!");
@@ -14,6 +19,8 @@ function searchKeyword() {
         console.log("field in searchKeyword", field);
         values[field.name] = field.value;
     });
+
+    //form needs to clear once the search is made
 
     console.log("this is values in searchKeyword", values);
 
@@ -33,6 +40,7 @@ function displaySearchResults (results) {
     //if results is empty what do?
     //if results doesn't match anything what do?
     //when the close button on the search bar is clicked all stations are displayed again
+
 
     console.log("I've made it to the search results function! Meow  display this shit!", results);
     $('#station').empty();
@@ -114,6 +122,7 @@ function stationApproval () {
             data: approvalid,
             success: function(data){
                 console.log("Ajax call in stationApproval", data);
+                reformatAddress(data);
             }
         });
 });
@@ -150,6 +159,48 @@ function clientData (clientAddedStations) {
 
 
 }
+
+function reformatAddress (data) {
+ console.log("reformat Addy", data);
+    var newaddress = (data.street + ", " + data.city + ", " + data.state + ", " + data.zip);
+
+    codeAddress(newaddress);
+
+    newFeature = {
+        "type": "Feature",
+        "geometry": {
+            "type": "Point"
+        },
+        "properties": {
+            "name": data.name
+        }
+    };
+console.log("newFeature", newFeature);
+}
+
+function codeAddress(data) {
+    console.log(data);
+    console.log("Coding le address");
+   var address = data;
+    geocoder.geocode( { 'address': address}, function(results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+            console.log("Everythings a okay!");
+            console.log(results);
+            var loc = [];
+            loc[0] = results[0].geometry.location.lat();
+            loc[1] = results[0].geometry.location.lng();
+            console.log(loc);
+            newFeature.geometry.coordinates = loc;
+            newFeature.properties.address = results[0].formatted_address;
+            console.log(newFeature);
+        } else {
+            alert("Geocode was not successful for the following reason: " + status);
+        }
+    });
+}
+
+
+
 
 
 //pagination not working currently
