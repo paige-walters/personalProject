@@ -16,11 +16,11 @@ function getData(){
         type: "GET",
         url: "/data",
         success: function(data){
-            globaldata = data[0];
+            globaldata = data;
             console.log("I got the data", globaldata);
 
             addDataToMap(globaldata);
-            dropDownList(globaldata);
+            //dropDownList(globaldata);
 
         }
     })
@@ -36,23 +36,29 @@ function initMap() {
     });
 
 }
-
-
-function dropDownList(stationsOnMap){
-
-
-    for(var i = 0; i < stationsOnMap.features.length; i++){
-        $('#dropdownlist').append("<option>" + i + " - " + stationsOnMap.features[i].properties.name + "</option>");
-
+//
+//
+//function dropDownList(stationsOnMap){
+//
+//
+//    for(var i = 0; i < stationsOnMap.features.length; i++){
+//        $('#dropdownlist').append("<option>" + i + " - " + stationsOnMap.features[i].properties.name + "</option>");
+//
+//    }
+//
+//
+//
+//    $('select').material_select();
+//
+//}
+function addDataToMap(data) {
+    for(var i=0; i < data.length; i++){
+        console.log("in le loop", data[i]);
+        map.data.addGeoJson(data[i]);
     }
 
 
-
-    $('select').material_select();
-
-}
-function addDataToMap(data) {
-    map.data.addGeoJson(data);
+    console.log("Look at me! This is the format the data is in when the annotations on the map are loaded", data);
 
     // global infowindow
     var infowindow = new google.maps.InfoWindow();

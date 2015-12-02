@@ -25,10 +25,10 @@ app.use(bodyParser.urlencoded({expanded: true}));
 //get call for the stations collection in the db
 
 app.get('/data', function(req,res){
-        Station.find({"type": "FeatureCollection"}, function(err, data){
+        Station.find({}, function(err, data){
             if (err) console.log(err);
             console.log(data);
-            res.json(data);
+            res.send(data);
         })
     });
 
@@ -42,7 +42,25 @@ app.get('/admin', function(req,res){
         res.json(data);
     })
 });
+app.get('/adminadded', function(req,res){
+    console.log("this is the req.query ", req.query);
 
+    Stationadded.findOne({"_id" : req.query.id}, function(err, data){
+        if (err) console.log(err);
+        console.log("Is this is the data I wanted back from my click", data);
+        res.send(data);
+    })
+});
+
+app.get('/search', function(req,res){
+    console.log("this is the req.query ", req.query);
+
+    Station.find({$text: {$search: req.query.search}}, function(err, data){
+        if (err) console.log(err);
+        console.log("The search data", data);
+        res.send(data);
+    })
+});
 
 app.post('/data', function(req,res){
     console.log(req);
