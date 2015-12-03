@@ -17,6 +17,9 @@ var Station = mongoose.model('Station');
 mongoose.model('Stationadded', new Schema({ "name": String, "street": String, "city": String, "state": String, "zip": String, "number": String}, {collection: 'client_added_stations'}));
 var Stationadded = mongoose.model('Stationadded');
 
+mongoose.model('approvedStation', new Schema( { "type": String, "geometry": Object, "properties": Object, "name": String, "address": String}, {collection: 'stations'}));
+var approvedStation = mongoose.model('approvedStation');
+
 app.set('port', process.env.PORT || 5000);
 
 app.use(bodyParser.json());
@@ -28,7 +31,7 @@ app.get('/data', function(req,res){
         Station.find({}, function(err, data){
             if (err) console.log(err);
             console.log(data);
-            res.send(data);
+            res.json(data);
         })
     });
 
@@ -74,6 +77,36 @@ app.post('/data', function(req,res){
     });
 
     addedStation.save(function(err, data){
+        if(err) console.log(err);
+        res.send(data);
+    });
+});
+
+app.post('/newStation', function(req,res){
+    console.log("this is the req", req);
+    console.log("is this a number or string?", req.body.geometry.coordinates);
+    var lat = Number(req.body.geometry.coordinates[0]);
+    var lng = Number(req.body.geometry.coordinates[1]);
+    var cords = [lat, lng];
+    console.log(cords);
+
+    var newStation = new approvedStation(
+
+    {
+        "type": "Feature",
+            "geometry": {
+            "type": "Point",
+                "coordinates": cords
+        },
+        "properties": {
+            "name": req.body.properties.name,
+                "address": req.body.properties.address
+
+        }
+    });
+
+
+    newStation.save(function(err, data){
         if(err) console.log(err);
         res.send(data);
     });

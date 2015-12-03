@@ -196,9 +196,21 @@ function codeAddress(data) {
         } else {
             alert("Geocode was not successful for the following reason: " + status);
         }
+        postToStationsDB();
     });
 }
 
+function postToStationsDB () {
+
+    $.ajax({
+        type: "POST",
+        url: "/newStation",
+        data: newFeature,
+        success: function(data){
+            console.log("Post complete!", data);
+        }
+    });
+}
 
 
 
