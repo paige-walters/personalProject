@@ -15,6 +15,7 @@ function getData(){
     $.ajax({
         type: "GET",
         url: "/data",
+        dataType: 'json',
         success: function(data){
             globaldata = data;
             console.log("I got the data", globaldata);

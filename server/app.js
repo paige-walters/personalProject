@@ -46,7 +46,7 @@ app.get('/admin', function(req,res){
     })
 });
 app.get('/adminadded', function(req,res){
-    console.log("this is the req.query ", req.query);
+    //console.log("this is the req.query ", req.query);
 
     Stationadded.findOne({"_id" : req.query.id}, function(err, data){
         if (err) console.log(err);
@@ -56,7 +56,7 @@ app.get('/adminadded', function(req,res){
 });
 
 app.get('/search', function(req,res){
-    console.log("this is the req.query ", req.query);
+//    console.log("this is the req.query ", req.query);
 
     Station.find({$text: {$search: req.query.search}}, function(err, data){
         if (err) console.log(err);
@@ -66,7 +66,7 @@ app.get('/search', function(req,res){
 });
 
 app.post('/data', function(req,res){
-    console.log(req);
+    //console.log(req);
     var addedStation = new Stationadded({
         "name" : req.body.station_name,
         "street" : req.body.station_street,
@@ -83,12 +83,12 @@ app.post('/data', function(req,res){
 });
 
 app.post('/newStation', function(req,res){
-    console.log("this is the req", req);
-    console.log("is this a number or string?", req.body.geometry.coordinates);
+    //console.log("this is the req", req);
+    //console.log("is this a number or string?", req.body.geometry.coordinates);
     var lat = Number(req.body.geometry.coordinates[0]);
     var lng = Number(req.body.geometry.coordinates[1]);
-    var cords = [lat, lng];
-    console.log(cords);
+    var cords = [lng, lat];
+    //console.log(cords);
 
     var newStation = new approvedStation(
 
@@ -114,10 +114,34 @@ app.post('/newStation', function(req,res){
 
 
 app.delete('/delete', function(req,res){
-    console.log('The delete call made it to the server');
-    console.log(req.body.id);
+    //console.log('The delete call made it to the server');
+    //console.log(req.body.id);
 
     Stationadded.findByIdAndRemove({"_id" : req.body.id}, function(err, data){
+        if(err) console.log(err);
+        res.send(data);
+    });
+
+
+});
+
+app.delete('/deleteAfterApproval', function(req,res){
+    console.log('The delete call made it to the server');
+    console.log(req.body._id);
+
+    Stationadded.findByIdAndRemove({"_id" : req.body._id}, function(err, data){
+        if(err) console.log(err);
+        res.send(data);
+    });
+
+
+});
+
+app.delete('/deleteStation', function(req,res){
+    //console.log('The delete call made it to the server');
+    //console.log(req.body.id);
+
+    Station.findByIdAndRemove({"_id" : req.body.id}, function(err, data){
         if(err) console.log(err);
         res.send(data);
     });

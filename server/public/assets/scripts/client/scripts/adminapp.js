@@ -5,20 +5,22 @@ $(document).ready(function() {
 });
 var geocoder;
 var newFeature;
+var approvalid;
 function initialize() {
     geocoder = new google.maps.Geocoder();
 }
 
 function searchKeyword() {
-    console.log("why the fuck can't I do this?!");
-
     event.preventDefault();
+
     var values = {};
 
     $.each($(this).serializeArray(), function (i, field) {
         console.log("field in searchKeyword", field);
         values[field.name] = field.value;
     });
+
+    $('#searchAdmin').find("input[type=text]").val("");
 
     //form needs to clear once the search is made
 
@@ -41,15 +43,19 @@ function displaySearchResults (results) {
     //if results doesn't match anything what do?
     //when the close button on the search bar is clicked all stations are displayed again
 
+    if(results == "") {
+        alert('No matches, fool!');
+        getData();
+    } else {
+        console.log("I've made it to the search results function! Meow  display this shit!", results);
+        $('#station').empty();
+        for (var i = 0; i < results.length; i++) {
+            //console.log(stationsInDB[0].features[i].properties.name);
+            $('#station').append("<tr class='content'></tr>" + "<td>" + i + "</td>" + "<td>" + results[i].properties.name + "</td>" +
+                "<td>" + results[i].properties.address + "</td>" +
+                "<td><button class='delete #b71c1c red darken-4' id='deleteStation'><i class='material-icons'>delete</i></button>");
 
-    console.log("I've made it to the search results function! Meow  display this shit!", results);
-    $('#station').empty();
-    for(var i = 0; i < results.length; i++){
-        //console.log(stationsInDB[0].features[i].properties.name);
-        $('#station').append("<tr class='content'></tr>" + "<td>" + i + "</td>" + "<td>" + results[i].properties.name + "</td>" +
-            "<td>" + results[i].properties.address + "</td>" +
-            "<td><button class='delete #b71c1c red darken-4' id='deleteStation'><i class='material-icons'>delete</i></button>");
-
+        }
     }
 
 }
@@ -104,6 +110,31 @@ function deleteStation () {
     });
 }
 
+function permDeleteStation () {
+    $('.deleteStation').on('click', function(){
+        console.log("clicked, clickedy, click!");
+        if(confirm("You absolutely a 100% sure you want to delete this station admin?")){
+
+        var deletedId = {"id" : $(this).data("id")};
+
+        console.log("Meaningful Log: ", deletedId);
+
+        $.ajax({
+            type: "DELETE",
+            url: "/deleteStation",
+            data: deletedId,
+            success: function(data){
+                console.log("Deleted successfully bitches!");
+                $('#station').empty();
+                getData();
+
+            }
+        })
+            }
+        return false;
+    });
+}
+
 function stationApproval () {
 
     $('.check').on('click', function () {
@@ -111,7 +142,7 @@ function stationApproval () {
         console.log("Did I do thaaaat?");
 
         //getting the id of the object that check button was clicked on setting it to a var to pass to the ajax call
-        var approvalid = {"id" : $(this).data("id")};
+        approvalid = {"id" : $(this).data("id")};
         console.log(approvalid);
 
         //get call for the individual object,
@@ -135,7 +166,8 @@ function adminData (stationsInDB) {
         //console.log(stationsInDB[0].features[i].properties.name);
         $('#station').append("<tr class='content'></tr>" + "<td>" + i + "</td>" + "<td>" + stationsInDB[i].properties.name + "</td>" +
             "<td>" + stationsInDB[i].properties.address + "</td>" +
-            "<td><button class='delete #b71c1c red darken-4' id='deleteStation'><i class='material-icons'>delete</i></button>");
+            "<td><button class='deleteStation #b71c1c red darken-4' data-id='" +
+            stationsInDB[i]._id + "'><i class='material-icons'>delete</i></button>");
 
     }
 
@@ -155,6 +187,7 @@ function clientData (clientAddedStations) {
     }
     stationApproval();
     deleteStation();
+    permDeleteStation();
 
 
 
@@ -208,13 +241,29 @@ function postToStationsDB () {
         data: newFeature,
         success: function(data){
             console.log("Post complete!", data);
+            deleteAfterApproval();
         }
     });
 }
 
+function deleteAfterApproval () {
+console.log("delete After approval", approvalid.id);
+var deleteAfterApproval = {"_id" : approvalid.id};
+console.log(deleteAfterApproval);
 
+    $.ajax({
+        type: "DELETE",
+        url: "/deleteAfterApproval",
+        data: deleteAfterApproval,
+        success: function(data){
+            console.log("Deleted successfully bitches!");
+            $('#station').empty();
+            getData();
 
+        }
+    })
 
+}
 //pagination not working currently
 
 //function pagination() {
