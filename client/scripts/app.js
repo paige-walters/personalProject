@@ -33,7 +33,7 @@ function initMap() {
 
     map = new google.maps.Map(document.getElementById('map'), {
         center: {lat: 44.87608, lng: -93.329406},
-        zoom: 9
+        zoom: 10
     });
 
 }
@@ -93,6 +93,7 @@ function geolocationBtn() {
                 infoWindow.setPosition(pos);
                 infoWindow.setContent('I spy with my 20,000 satellites...');
                 map.setCenter(pos);
+                map.setZoom(12);
             }, function () {
                 handleLocationError(true, infoWindow, map.getCenter());
             });

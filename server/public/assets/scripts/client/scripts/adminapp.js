@@ -1,7 +1,10 @@
 $(document).ready(function() {
-    getData();
-    $('#searchAdmin').submit(searchKeyword);
     initialize();
+    getData();
+
+    $('#searchAdmin').submit(searchKeyword);
+
+
 });
 var geocoder;
 var newFeature;
@@ -62,15 +65,6 @@ function displaySearchResults (results) {
 
 
 function getData(){
-    $.ajax({
-        type: "GET",
-        url: "/data",
-        success: function(data){
-            console.log(data);
-            var stationsInDB = data;
-            adminData(stationsInDB);
-        }
-    });
 
     $.ajax({
         type: "GET",
@@ -83,6 +77,18 @@ function getData(){
 
         }
     });
+
+    $.ajax({
+        type: "GET",
+        url: "/data",
+        success: function(data){
+            console.log(data);
+            var stationsInDB = data;
+            adminData(stationsInDB);
+        }
+    });
+
+
 
 
 }
@@ -170,7 +176,7 @@ function adminData (stationsInDB) {
             stationsInDB[i]._id + "'><i class='material-icons'>delete</i></button>");
 
     }
-
+    permDeleteStation();
 }
 //displaying any new client added stations on the DOM
 function clientData (clientAddedStations) {
@@ -187,7 +193,7 @@ function clientData (clientAddedStations) {
     }
     stationApproval();
     deleteStation();
-    permDeleteStation();
+
 
 
 
