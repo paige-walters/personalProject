@@ -42,13 +42,18 @@ function searchKeyword() {
 }
 
 function displaySearchResults (results) {
+
+    var message = "Sorry, your search didn't match anything. Try again";
     //if results is empty what do?
     //if results doesn't match anything what do?
     //when the close button on the search bar is clicked all stations are displayed again
 
     if(results == "") {
-        alert('No matches, fool!');
-        getData();
+        $('#station').empty();
+        $('#station').append("<h1 class='row flow-text center-align'>" + message + "</h2>");
+        //alert('No matches, fool!');
+        //getData();
+//check here for the delete button id
     } else {
         console.log("I've made it to the search results function! Meow  display this shit!", results);
         $('#station').empty();
@@ -56,7 +61,8 @@ function displaySearchResults (results) {
             //console.log(stationsInDB[0].features[i].properties.name);
             $('#station').append("<tr class='content'></tr>" + "<td>" + i + "</td>" + "<td>" + results[i].properties.name + "</td>" +
                 "<td>" + results[i].properties.address + "</td>" +
-                "<td><button class='delete #b71c1c red darken-4' id='deleteStation'><i class='material-icons'>delete</i></button>");
+                "<td><button class='deleteStation #b71c1c red darken-4' data-id='" +
+                results[i]._id + "'><i class='material-icons'>delete</i></button>");
 
         }
     }
@@ -170,7 +176,7 @@ function stationApproval () {
 function adminData (stationsInDB) {
     for(var i = 0; i < stationsInDB.length; i++){
         //console.log(stationsInDB[0].features[i].properties.name);
-        $('#station').append("<tr class='content'></tr>" + "<td>" + i + "</td>" + "<td>" + stationsInDB[i].properties.name + "</td>" +
+        $('#station').append("<tr class='content'></tr>" + "<td>" + stationsInDB[i].properties.name + "</td>" +
             "<td>" + stationsInDB[i].properties.address + "</td>" +
             "<td><button class='deleteStation #b71c1c red darken-4' data-id='" +
             stationsInDB[i]._id + "'><i class='material-icons'>delete</i></button>");

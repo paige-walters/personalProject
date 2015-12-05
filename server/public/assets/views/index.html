@@ -36,95 +36,61 @@
 
 <body>
 
-<div class="container">
-
     <div class="row">
-        <div class="left col s3">
-            <div  id="addlogo">
-                <img class="center" src="../assets/styles/drawing.jp.jpg">
+        <div class="col l4" id="leftside">
+            <div id="addlogo" class="center">
+                <img src="../assets/styles/drawing.jp.jpg">
             </div>
-            <div>
-                <a class="center waves-effect waves-light btn-large #b71c1c red darken-4" id="currentLocation"><i class="material-icons left">my_location</i>My Location</a>
+
+            <div class="center">
+                <p class="flow-text" id="description">Opptane 93 is an app designed to make it easier to<br>
+                    find gas stations that provide 93 or higher octane gas</p>
             </div>
-            <form>
-            <div>
+
+
+            <div class="center">
+                <h5 class="center">Find a station near you!</h5>
+
+                <a class="waves-effect waves-light btn-large #b71c1c red darken-4 center" id="currentLocation"><i class="center material-icons left">my_location</i>Current Location</a>
+
+            </div>
+            <form class="center" id="areaSearch">
+            <div class="center findAstation">
                     <div class="input-field">
-                        <input placeholder="City, State, or Zip" id="station_search" type="text">
+                        <input placeholder="City, State, or Zip" id="station_search" name="station_search" type="text">
                         <label for="station_search"></label>
                     </div>
+
+                <button class="btn waves-effect waves-light #b71c1c red darken-4 center" id="areaBtn" type="submit" name="action">Find</button>
             </div>
-
-            <div class="row center-align">
-                <button class="center btn waves-effect waves-light #b71c1c red darken-4" type="submit" name="action">Search
-                </button>
-            </div>
-
-
-                <!--<select id="dropdownlist">-->
-                <!--</select>-->
-
             </form>
-            <div>
-                <p class="flow-text">Opptane 93 is an app designed to make it easier to
-                    find gas stations that provide 93 or higher octane gas</p>
-            <a class="center btn waves-effect waves-light #b71c1c red darken-4" href="assets/views/addAstation.html">Add a station!</a>
-            </div>
+
         </div>
 
-
-        <div class="right row">
-        <div class="col s5" id="map"></div>
-        </div>
+        <div class="col l6" id="map"></div>
 
     </div>
+
+<div class="row">
+
+    <div class="center col l4">
+
+        <a class="btn waves-effect waves-light #b71c1c red darken-4" href="assets/views/addAstation.html">Add a station!</a>
+
+    </div>
+
+        <div class="center col l8 contact">
+
+            <p>Email or like us on Facebook!</p>
+
+            <a href="mailto:paige.walters92@gmail.com"><i class="icon small material-icons left-align">email</i></a>
+
+            <a href="https://www.facebook.com/opptane93/"><i class="icon small material-icons right-align">thumb_up</i></a>
+        </div>
+
+
+
+
 </div>
 
 </body>
-<!--<body>-->
-    <!--<div class="container">-->
-        <!--<div class="sidebar well">-->
-            <!--&lt;!&ndash;<img class="thumbnail" src="assets/styles/opptanelogo.png">&ndash;&gt;-->
-            <!--<div class="logo" id="logo"></div>-->
-            <!--<button class="btn btn-danger" id="currentLocation">Current Location</button>-->
-
-
-            <!--<form id="search">-->
-                <!--<input type="text" id="locationSearch" name="locationSearch" placeholder="City, State, or Zip"><br>-->
-                <!--<button id="submitSearch" class="btn btn-danger">Search</button>-->
-            <!--</form>-->
-
-
-            <!--<select multiple class="form-control" id="dropdownlist">-->
-            <!--</select>-->
-
-            <!--&lt;!&ndash;<div class="dropdown">&ndash;&gt;-->
-                <!--&lt;!&ndash;<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">&ndash;&gt;-->
-                    <!--&lt;!&ndash;List of Stations&ndash;&gt;-->
-                    <!--&lt;!&ndash;<span class="caret"></span>&ndash;&gt;-->
-                <!--&lt;!&ndash;</button>&ndash;&gt;-->
-                <!--&lt;!&ndash;<ul class="dropdown-menu" id="dropdownlist" aria-labelledby="dropdownMenu1">&ndash;&gt;-->
-                <!--&lt;!&ndash;</ul>&ndash;&gt;-->
-            <!--&lt;!&ndash;</div>&ndash;&gt;-->
-
-
-            <!--<p>Opptane 93 is an app designed to make it easier to<br>-->
-                <!--find gas stations that provide 93 or higher octane gas</p>-->
-
-            <!--<a href="assets/views/addAstation.html">Add a station!</a>-->
-
-            <!--<div class="footer" id="contactInfo">-->
-
-            <!--<p id="contact">Contact us at the links below</p>-->
-                <!--<img src="https://osiprodeusodcspstoa01.blob.core.windows.net/en-us/media/dc36f8aa-3677-4a31-aea2-04f8525a8131.png" >-->
-            <!--</div>-->
-        <!--</div>-->
-
-    <!--<div class="well" id="map">-->
-    <!--</div>-->
-
-
-    <!--</div>-->
-
-
-<!--</body>-->
-<!--</html>-->

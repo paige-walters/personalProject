@@ -1,24 +1,78 @@
-#currentLocation {
-    margin: 10px;
-}
-#submitSearch {
-    margin: 10px;
-}
-#map {
-    width: 650px;
-    height: 600px;
-    /*float: right;*/
-}
-.sidebar {
-    float: left;
-}
-
-.logo {
-    margin: 10px;
-}
-
 body {
     height: 100%;
     margin: 0;
     padding: 0;
+    font-family: "Roboto", sans-serif;
 }
+p {
+    font: bold italic;
+    margin: 20px 5px 20px 5px;
+}
+
+/*#currentLocation {*/
+    /*margin: 10px;*/
+/*}*/
+/*#submitSearch {*/
+    /*margin: 10px;*/
+/*}*/
+#map {
+    width: 800px;
+    height: 600px;
+    margin-top: 40px;
+    /*float: right;*/
+}
+#leftside {
+    margin: 40px 20px 0 10px;
+}
+#station_search {
+    width: 300px;
+}
+#areaBtn {
+    margin: 10px 0 20px 0;
+}
+
+.icon {
+    margin: 0 20px 0 20px;
+}
+
+
+/*.sidebar {*/
+    /*float: left;*/
+/*}*/
+
+/*.logo {*/
+    /*margin: 10px;*/
+/*}*/
+/*.contact {*/
+    /*margin: 20px;*/
+/*}*/
+/*.input-field{*/
+    /*color: #66185e;*/
+/*}*/
+/*/!* label color *!/*/
+/*.input-field label {*/
+    /*color: #285cee;*/
+/*}*/
+/*/!* label focus color *!/*/
+/*.input-field input[type=text]:focus + label {*/
+    /*color: #285cee;*/
+/*}*/
+/*/!* label underline focus color *!/*/
+/*.input-field input[type=text]:focus {*/
+    /*border-bottom: 1px solid #285cee;*/
+    /*box-shadow: 0 1px 0 0 #285cee;*/
+/*}*/
+/*/!* valid color *!/*/
+/*.input-field input[type=text].valid {*/
+    /*border-bottom: 1px solid #285cee;*/
+    /*box-shadow: 0 1px 0 0 #285cee;*/
+/*}*/
+/*/!* invalid color *!/*/
+/*.input-field input[type=text].invalid {*/
+    /*border-bottom: 1px solid #285cee;*/
+    /*box-shadow: 0 1px 0 0 #285cee;*/
+/*}*/
+/*/!* icon prefix focus color *!/*/
+/*.input-field .prefix.active {*/
+    /*color: #285cee;*/
+/*}*/

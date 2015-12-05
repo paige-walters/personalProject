@@ -1,5 +1,6 @@
 var globaldata = [];
 var map;
+var geocoder;
 
 $(document).ready(function(){
     console.log("Up and running!");
@@ -7,7 +8,8 @@ $(document).ready(function(){
     initMap();
     getData();
     geolocationBtn();
-
+    initialize();
+    $('#areaSearch').submit(areaSearch);
 
 });
 
@@ -90,8 +92,8 @@ function geolocationBtn() {
                     lng: position.coords.longitude
                 };
 
-                infoWindow.setPosition(pos);
-                infoWindow.setContent('I spy with my 20,000 satellites...');
+                //infoWindow.setPosition(pos);
+                //infoWindow.setContent('I spy with my 20,000 satellites...');
                 map.setCenter(pos);
                 map.setZoom(12);
             }, function () {
@@ -111,6 +113,48 @@ function geolocationBtn() {
 
     });
 
+}
+
+function initialize() {
+    geocoder = new google.maps.Geocoder();
+}
+
+
+
+function areaSearch() {
+    event.preventDefault();
+
+    var values = {};
+
+    $.each($(this).serializeArray(), function (i, field) {
+        console.log("field in searchKeyword", field);
+        values[field.name] = field.value;
+    });
+
+    var search = values.station_search;
+    $('#areaSearch').find("input[type=text]").val("");
+
+    //form needs to clear once the search is made
+
+    console.log("this is values in search", search);
+
+
+geocoder.geocode( { 'address': search}, function(results, status) {
+    if (status == google.maps.GeocoderStatus.OK) {
+        console.log("Everythings a okay!");
+        console.log(results);
+        var loc = [];
+        loc[0] = results[0].geometry.location.lat();
+        loc[1] = results[0].geometry.location.lng();
+        var pos = {lng: loc[1], lat: loc[0],};
+        console.log(pos);
+        map.setCenter(pos);
+        map.setZoom(12);
+    } else {
+        alert("Geocode was not successful for the following reason: " + status);
+    }
+
+});
 }
 
 
